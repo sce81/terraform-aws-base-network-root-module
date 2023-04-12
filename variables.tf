@@ -1,3 +1,8 @@
+variable "vpc_version" {
+  type        = string
+  description = "Git Tag ID of the version of vpc module to import from the TFC registry"
+  default     = "1.0.0"
+}
 variable "vpc_name" {
   type        = string
   description = "Descriptive name of VPC"

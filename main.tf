@@ -1,5 +1,6 @@
 module "vpc" {
-  source               = "git@github.com:sce81/aws-tf-module-vpc.git"
+  source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/aws-vpc/module"
+  version              = var.vpc_version
   name                 = var.vpc_name
   env                  = var.env_name
   vpc_cidr             = var.vpc_cidr
