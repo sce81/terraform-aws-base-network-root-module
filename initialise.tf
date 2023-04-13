@@ -9,13 +9,6 @@ provider "aws" {
 }
 
 terraform {
-  cloud {
-    organization = "HashiCorp_TFC_Automation_Demo"
-
-    workspaces {
-      name = "aws_workspace_platform-dev"
-    }
-  }
   required_version = "~> 1.4.0"
 
   required_providers {
