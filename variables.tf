@@ -21,17 +21,17 @@ variable "vpc_cidr" {
   description = "CIDR to assign to VPC Network"
 }
 variable "public_subnet_cidr" {
-  type        = list(string)
+  type        = string
   default     = null
   description = "(Optional) CIDR values to be assigned to Public defined VPC Subnets"
 }
 variable "private_subnet_cidr" {
-  type        = list(string)
+  type        = string
   default     = null
   description = "(Optional) CIDR values to be assigned to Private defined VPC Subnets"
 }
 variable "database_subnet_cidr" {
-  type        = list(string)
+  type        = string
   default     = null
   description = "(Optional) CIDR values to be assigned to Database defined VPC Subnets"
 }
