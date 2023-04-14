@@ -1,5 +1,10 @@
 provider "aws" {
   region = "eu-west-1"
+
+  assume_role {
+    role_arn = var.role_arn
+    external_id = "terraform_runner"
+  }
   default_tags {
     tags = {
       env     = var.env_name
@@ -9,13 +14,13 @@ provider "aws" {
 }
 
 terraform {
-  cloud {
-    organization = "HashiCorp_TFC_Automation_Demo"
-
-    workspaces {
-      name = "aws_workspace_platform-dev"
-    }
-  }
+//  cloud {
+//    organization = "HashiCorp_TFC_Automation_Demo"
+//
+//    workspaces {
+//      name = "aws_workspace_platform-dev"
+//    }
+//  }
   required_version = "~> 1.4.0"
 
   required_providers {
