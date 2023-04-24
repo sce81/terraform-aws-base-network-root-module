@@ -40,6 +40,6 @@ module "private-route" {
   vpc_id     = module.vpc.vpc_id
   name       = var.vpc_name
   env_name   = var.env_name
-  subnet_ids = flatten([module.vpc.private_subnet_ids, module.vpc.database_subnet_ids]
+  subnet_ids = flatten([module.vpc.private_subnet_ids, module.vpc.database_subnet_ids])
   route_info = local.private_route_info
 }
