@@ -16,7 +16,7 @@ module "internet-gateway" {
   env_name = var.env_name
 }
 module "public-route" {
-  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-route-table/aws"
+  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
   version    = "1.0.2"
   route_name = ["public-route-table"]
   vpc_id     = module.vpc.vpc_id
@@ -34,7 +34,7 @@ module "nat_gateway" {
 }
 module "private-route" {
 
-  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-route-table/aws"
+  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
   version    = "1.0.2"
   route_name = ["private-route-table"]
   vpc_id     = module.vpc.vpc_id
