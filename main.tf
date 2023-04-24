@@ -14,6 +14,11 @@ module "internet-gateway" {
   vpc_id   = module.vpc.vpc_id
   name     = var.vpc_name
   env_name = var.env_name
+
+  depends_on = [
+    module.vpc.vpc_id
+  ]
+
 }
 module "public-route" {
   source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
@@ -24,6 +29,10 @@ module "public-route" {
   env_name   = var.env_name
   subnet_ids = module.vpc.public_subnet_ids
   route_info = local.public_route_info
+  
+  depends_on = [
+    module.vpc.vpc_id
+  ]
 }
 module "nat_gateway" {
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
@@ -31,6 +40,10 @@ module "nat_gateway" {
   name     = var.vpc_name
   env_name = var.env_name
   vpc_id   = module.vpc.vpc_id
+  
+  depends_on = [
+    module.vpc.vpc_id
+  ]
 }
 module "private-route" {
 
@@ -42,4 +55,8 @@ module "private-route" {
   env_name   = var.env_name
   subnet_ids = flatten([module.vpc.private_subnet_ids, module.vpc.database_subnet_ids])
   route_info = local.private_route_info
+
+  depends_on = [
+    module.vpc.vpc_id
+  ]
 }
