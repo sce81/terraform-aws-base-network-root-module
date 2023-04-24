@@ -27,7 +27,7 @@ module "public-route" {
 }
 module "nat_gateway" {
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
-  version  = "1.0.3"
+  version  = "1.0.4"
   name     = var.vpc_name
   env_name = var.env_name
   vpc_id   = module.vpc.vpc_id
