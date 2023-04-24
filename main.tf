@@ -9,15 +9,15 @@ module "vpc" {
   database_subnet_cidr = split(", ", var.database_subnet_cidr)
 }
 module "internet-gateway" {
-  source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-internet-gateway/module"
-  version  = "1.0.0"
+  source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-internet-gateway/aws"
+  version  = "1.0.1"
   vpc_id   = module.vpc.vpc_id
   name     = var.vpc_name
   env_name = var.env_name
 }
 module "public-route" {
-  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-route-table/module"
-  version    = "1.0.0"
+  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/aws-route-table/module"
+  version    = "1.0.1"
   route_name = ["public-route-table"]
   vpc_id     = module.vpc.vpc_id
   name       = var.vpc_name
@@ -26,16 +26,16 @@ module "public-route" {
   route_info = local.public_route_info
 }
 module "nat_gateway" {
-  source            = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/module"
-  version           = "1.0.0"
+  source            = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
+  version           = "1.0.1"
   nat_gateway_count = 1
   name              = var.vpc_name
   env_name          = var.env_name
   vpc_id            = module.vpc.vpc_id
 }
 module "private-route" {
-  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-route-table/module"
-  version    = "1.0.0"
+  source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/aws-route-table/module"
+  version    = "1.0.1"
   route_name = ["private-route-table"]
   vpc_id     = module.vpc.vpc_id
   name       = var.vpc_name
