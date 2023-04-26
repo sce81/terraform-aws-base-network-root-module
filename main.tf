@@ -22,7 +22,7 @@ module "internet-gateway" {
 }
 module "public-route" {
   source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
-  version    = "1.0.7"
+  version    = "1.0.8"
   route_name = ["public-route-table"]
   vpc_id     = module.vpc.vpc_id
   name       = var.vpc_name
@@ -48,7 +48,7 @@ module "nat_gateway" {
 module "private-route" {
 
   source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
-  version    = "1.0.6"
+  version    = "1.0.8"
   route_name = ["private-route-table"]
   vpc_id     = module.vpc.vpc_id
   name       = var.vpc_name
