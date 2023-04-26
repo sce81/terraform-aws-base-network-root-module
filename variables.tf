@@ -36,7 +36,8 @@ variable "database_subnet_cidr" {
   description = "(Optional) CIDR values to be assigned to Database defined VPC Subnets"
 }
 
-//variable "cross_account_role" {
-//  type        = string
-//  description = "REQUIRED: IAM Role ARN for terraform worker to assume in order to execute actions in this account"
-//}
+variable "cross_account_role" {
+  type        = string
+  description = "REQUIRED: IAM Role ARN for terraform worker to assume in order to execute actions in this account"
+  default = null
+}
