@@ -10,7 +10,7 @@ module "vpc" {
 }
 module "internet-gateway" {
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-internet-gateway/aws"
-  version  = "1.0.1"
+  version  = "1.0.2"
   vpc_id   = module.vpc.vpc_id
   name     = var.vpc_name
   env_name = var.env_name
