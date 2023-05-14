@@ -11,7 +11,7 @@ output "private_subnets" {
 }
 
 output "nat_gw_ip" {
-  value = module.nat_gateway.*.public_ip
+  value = module.nat_gateway.*.public_ip[*]
 }
 output "public_route" {
   value = module.public-route.route_table

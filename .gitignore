@@ -1,4 +1,4 @@
-dev.tfvars
+*.tfvars
 
 # Local .terraform directories
 **/.terraform/*
