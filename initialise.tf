@@ -14,13 +14,13 @@ provider "aws" {
 }
 
 terraform {
-  //  cloud {
-  //    organization = "HashiCorp_TFC_Automation_Demo"
-  //
-  //    workspaces {
-  //      name = "aws_workspace_platform-dev"
-  //    }
-  //  }
+  cloud {
+    organization = "HashiCorp_TFC_Automation_Demo"
+
+    workspaces {
+      name = "aws_workspace_base_infra-sandbox"
+    }
+  }
   required_version = "~> 1.4.0"
 
   required_providers {

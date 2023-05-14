@@ -39,5 +39,11 @@ variable "database_subnet_cidr" {
 variable "cross_account_role" {
   type        = string
   description = "REQUIRED: IAM Role ARN for terraform worker to assume in order to execute actions in this account"
-  default = null
+  default     = null
+}
+
+variable "enable_natgw" {
+  type        = bool
+  description = "Boolean: Deploy NAT GW to this VPC"
+  default     = false
 }
