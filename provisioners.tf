@@ -18,7 +18,7 @@ terraform {
     organization = "HashiCorp_TFC_Automation_Demo"
 
     workspaces {
-      name = "aws_workspace_base_infra-sandbox"
+      name = "aws_workspace_base_infra-dev"
     }
   }
   required_version = "~> 1.4.0"
