@@ -37,7 +37,7 @@ module "public-route" {
 
 
 module "nat_gateway" {
-  count = var.enable_natgw == true ? 1 : 0
+
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
   version  = "1.0.8"
   name     = var.vpc_name
@@ -57,7 +57,7 @@ module "private-route" {
   name       = var.vpc_name
   env_name   = var.env_name
   subnet_ids = flatten([module.vpc.private_subnet_ids, module.vpc.database_subnet_ids])
-  route_info = var.enable_natgw == true ? local.private_route_info : []
+  route_info = local.private_route_info
 
   depends_on = [
     module.vpc.vpc_id
