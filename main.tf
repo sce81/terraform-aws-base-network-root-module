@@ -1,5 +1,5 @@
 module "vpc" {
-  source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/aws-vpc/module"
+  source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-network/aws"
   version              = "1.0.1"
   name                 = var.vpc_name
   env                  = var.env_name
