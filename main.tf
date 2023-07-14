@@ -1,8 +1,6 @@
 module "vpc" {
   source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-network/aws"
-  version              = "1.0.2"
-  //source = "/Users/simon.elliott/Documents/Code/Terraform/modules/aws/terraform-module-aws-vpc"
-  
+  version              = "1.0.2"  
   name                 = var.vpc_name
   env                  = var.env_name
   vpc_cidr             = var.vpc_cidr
