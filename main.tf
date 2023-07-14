@@ -1,8 +1,8 @@
 module "vpc" {
   source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/aws-vpc/module"
-  version              = "1.0.0"
+  version              = "1.0.1"
   name                 = var.vpc_name
-  env                  = var.env_name
+  env                  = "bob"
   vpc_cidr             = var.vpc_cidr
   public_subnet_cidr   = split(", ", var.public_subnet_cidr)
   private_subnet_cidr  = split(", ", var.private_subnet_cidr)
