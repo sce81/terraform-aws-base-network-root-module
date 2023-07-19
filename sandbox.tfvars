@@ -7,4 +7,13 @@ public_subnet_cidr   = "10.10.1.0/24, 10.10.2.0/24, 10.10.3.0/24"
 private_subnet_cidr  = "10.10.4.0/24, 10.10.5.0/24, 10.10.6.0/24"
 database_subnet_cidr = "10.10.7.0/24, 10.10.8.0/24, 10.10.9.0/24"
 cross_account_role   = "sandbox_base_infra_role"
-enable_natgw         = false
+enable_igw         = true
+enable_natgw       = true
+public_route_info  = [{
+      route_cidr = null
+      gateway_id = null
+}]
+private_route_info = [{
+      route_cidr = null
+      gateway_id = null
+}]

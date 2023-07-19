@@ -63,7 +63,7 @@ variable "public_route_info" {
 }
 
 variable "private_route_info" {
-  description = "Route Info for public route table"
+  description = "Route Info for private route table"
   type = list(object({
     route_cidr     = optional(string)
     gateway_id     = optional(string)

@@ -6,7 +6,7 @@ terraform {
   // }
   cloud {
     organization = "HashiCorp_TFC_Automation_Demo"
-    workspaces { name = "aws_workspace_base_infra_dev" }
+    workspaces { name = "aws_workspace_base_infra-sandbox" }
   }
   required_providers {
     aws = {

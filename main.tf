@@ -22,7 +22,7 @@ module "internet-gateway" {
 
 }
 module "public-route" {
-  count    = var.enable_igw == true ? 1 : 0
+  count      = var.enable_igw == true ? 1 : 0
   source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
   version    = "1.0.10"
   route_name = ["public-route-table"]
@@ -49,7 +49,7 @@ module "nat_gateway" {
   ]
 }
 module "private-route" {
-  count    = var.enable_natgw == true ? 1 : 0
+  count      = var.enable_natgw == true ? 1 : 0
   source     = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-vpc-route-table/aws"
   version    = "1.0.10"
   route_name = ["private-route-table"]
