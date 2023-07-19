@@ -42,8 +42,32 @@ variable "cross_account_role" {
   default     = null
 }
 
+variable "enable_igw" {
+  type        = bool
+  description = "Boolean: Deploy Internet GW to this VPC"
+  default     = false
+}
 variable "enable_natgw" {
   type        = bool
   description = "Boolean: Deploy NAT GW to this VPC"
   default     = false
+}
+variable "public_route_info" {
+  description = "Route Info for public route table"
+  type = list(object({
+    route_cidr     = optional(string)
+    gateway_id     = optional(string)
+    nat_gateway_id = optional(string)
+  }))
+  default = [{}]
+}
+
+variable "private_route_info" {
+  description = "Route Info for public route table"
+  type = list(object({
+    route_cidr     = optional(string)
+    gateway_id     = optional(string)
+    nat_gateway_id = optional(string)
+  }))
+  default = [{}]
 }
