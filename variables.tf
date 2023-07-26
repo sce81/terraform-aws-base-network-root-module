@@ -59,7 +59,7 @@ variable "public_route_info" {
     gateway_id     = optional(string)
     nat_gateway_id = optional(string)
   }))
-  default = [{}]
+  default = []
 }
 
 variable "private_route_info" {
@@ -69,5 +69,5 @@ variable "private_route_info" {
     gateway_id     = optional(string)
     nat_gateway_id = optional(string)
   }))
-  default = [{}]
+  default = []
 }
