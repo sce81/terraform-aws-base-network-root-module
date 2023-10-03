@@ -28,7 +28,6 @@ provider "aws" {
     tags = {
       env     = var.env_name
       project = var.project_name
-      hello = "world"
     }
   }
 }
