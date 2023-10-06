@@ -1,8 +1,8 @@
 terraform {
-  required_version = "~> 1.5.0"
+
   // backend "s3" {
-  //   bucket = "mybucket"
-  //   key    = "path/to/my/key"
+  //   bucket = "482485466615-terraform-state"
+  //   key    = "base_network/terraform.tfstate"
   // }
   cloud {
     organization = "HashiCorp_TFC_Automation_Demo"
