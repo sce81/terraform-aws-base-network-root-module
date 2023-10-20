@@ -6,10 +6,10 @@ terraform {
   // }
   cloud {
     organization = "HashiCorp_TFC_Automation_Demo"
-        workspaces {
-          tags = ["base_infra"]
-        }
-  //  workspaces { name = "aws_workspace_base_infra_dev" }
+    workspaces {
+      tags = ["base_infra"]
+    }
+    //  workspaces { name = "aws_workspace_base_infra_dev" }
   }
   required_providers {
     aws = {

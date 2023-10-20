@@ -52,6 +52,16 @@ variable "enable_natgw" {
   description = "Boolean: Deploy NAT GW to this VPC"
   default     = false
 }
+variable "tgw_id" {
+  type        = string
+  description = "ID of Transit gateway (if one exists) to route traffic back to"
+  default     = null
+}
+variable "network_cidr" {
+  type        = string
+  description = "Complete CIDR of internal network"
+  default     = "10.0.0.0/8"
+}
 variable "public_route_info" {
   description = "Route Info for public route table"
   type = list(object({
