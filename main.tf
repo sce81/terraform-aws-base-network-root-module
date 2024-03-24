@@ -1,6 +1,7 @@
 module "vpc" {
+  #source               = "/Users/simon.elliott/Documents/Code/New_Structure/Terraform_Modules/AWS/terraform-aws-vpc"
   source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-network/aws"
-  version              = "1.0.2"
+  version              = "1.0.1"
   name                 = var.vpc_name
   env                  = var.env_name
   vpc_cidr             = var.vpc_cidr
@@ -37,7 +38,7 @@ module "public-route" {
 
 
 module "nat_gateway" {
-  count    = var.enable_natgw == true ? 1 : 0
+  count    = 1
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
   version  = "1.1.0"
   name     = var.vpc_name
