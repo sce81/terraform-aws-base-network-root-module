@@ -38,7 +38,7 @@ module "public-route" {
 
 
 module "nat_gateway" {
-  count    = 1
+  count    = var.enable_natgw == true ? 1 : 0
   source   = "app.terraform.io/HashiCorp_TFC_Automation_Demo/module-nat-gateway/aws"
   version  = "1.1.0"
   name     = var.vpc_name
