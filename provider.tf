@@ -1,29 +1,25 @@
 terraform {
-
-  // backend "s3" {
-  //   bucket = "482485466615-terraform-state"
-  //   key    = "base_network/terraform.tfstate"
-  // }
   cloud {
     organization = "HashiCorp_TFC_Automation_Demo"
-    workspaces {
-      tags = ["base_infra"]
-    }
-    //  workspaces { name = "aws_workspace_base_infra_dev" }
+      workspaces {
+              project = "baseinfra"
+              name = "aws_workspace_base_infra_import"
+       }
   }
   required_providers {
     aws = {
-      version = "~> 5.5.0"
+      version = "~> 5.84.0"
       source  = "hashicorp/aws"
     }
   }
 }
 provider "aws" {
   region = "eu-west-1"
-  //    assume_role {
-  //      role_arn    = var.role_arn
-  //      external_id = "terraform_runner"
-  //    }
+
+//    assume_role_with_web_identity {
+//      role_arn           = var.role_arn
+//      web_identity_token = var.identity_token
+//    }
   default_tags {
     tags = {
       env     = var.env_name
