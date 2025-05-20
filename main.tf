@@ -1,5 +1,4 @@
 module "vpc" {
-  #source               = "/Users/simon.elliott/Documents/Code/New_Structure/Terraform_Modules/AWS/terraform-aws-vpc"
   source               = "app.terraform.io/HashiCorp_TFC_Automation_Demo/vpc-network/aws"
   version              = "1.0.2"
   name                 = var.vpc_name
@@ -8,6 +7,7 @@ module "vpc" {
   public_subnet_cidr   = split(", ", var.public_subnet_cidr)
   private_subnet_cidr  = split(", ", var.private_subnet_cidr)
   database_subnet_cidr = split(", ", var.database_subnet_cidr)
+
 }
 module "internet-gateway" {
   count    = var.enable_igw == true ? 1 : 0

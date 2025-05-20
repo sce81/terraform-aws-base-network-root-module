@@ -7,6 +7,11 @@ variable "vpc_name" {
   type        = string
   description = "Descriptive name of VPC"
 }
+variable "region" {
+  type        = string
+  default     = "eu-west-1"
+  description = "AWS Region to deploy resources into"
+}
 variable "env_name" {
   type        = string
   description = "Descriptive name of Environment"
@@ -81,3 +86,8 @@ variable "private_route_info" {
   }))
   default = []
 }
+
+//variable "role_arn" {
+//  default     = null
+//  description = "AWS IAM Role to assume for this deployment# set as environment variable in workspace vars"
+//}
